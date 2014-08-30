@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140830102529) do
+ActiveRecord::Schema.define(version: 20140830104315) do
 
   create_table "brands", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "car_classes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140830102529) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "car_class_id"
   end
 
 end

@@ -1,5 +1,5 @@
 class Type < ActiveRecord::Base
 
-  validates :name, :tupe_id, :class_id, presence: true
+  validates :name, :type_id, :car_class_id, presence: true
 
 end
