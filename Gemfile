@@ -31,6 +31,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'simple_form'
 gem 'devise'
 
+gem 'state_machine'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
