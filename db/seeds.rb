@@ -30,7 +30,7 @@ client_1 = Client.create!(name: 'John', surname: 'Doe', age: 23, doc_number: 'AG
 client_2 = Client.create!(name: 'Tom', surname: 'Flo', age: 44, doc_number: 'AGF9999', doc_type: 'Passport')
 client_3 = Client.create!(name: 'Ben', surname: 'Man', age: 34, doc_number: 'ZZZ1234', doc_type: 'ID')
 
-car_1 = Car.create!(type_id: A5.id, plate: "KR1234", production_year: 2012, state: "rented", car_paint: "red")
-car_1 = Car.create!(type_id: A5.id, plate: "DW7435", production_year: 2010, state: "rented", car_paint: "black")
-car_1 = Car.create!(type_id: M5.id, plate: "WE6453", production_year: 2011, state: "rented", car_paint: "white")
-car_1 = Car.create!(type_id: CLS.id, plate: "WU3452", production_year: 2013, state: "rented", car_paint: "metalic")
+car_1 = Car.create!(type_id: A5.id, plate: "KR1234", production_year: 2012, state: "available", car_paint: "red")
+car_2 = Car.create!(type_id: A5.id, plate: "DW7435", production_year: 2010, state: "available", car_paint: "black")
+car_3 = Car.create!(type_id: M5.id, plate: "WE6453", production_year: 2011, state: "available", car_paint: "white")
+car_4 = Car.create!(type_id: CLS.id, plate: "WU3452", production_year: 2013, state: "available", car_paint: "metalic")
