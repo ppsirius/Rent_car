@@ -1,10 +1,10 @@
 require 'test_helper'
 
-def car_params
-  {state: "free", car_paint: "black", plate: 12345, production_year: 1997, type_id: 2}
-end
-
 class CarTest < ActiveSupport::TestCase
+
+  def car_params
+  {state: "free", car_paint: "black", plate: 12345, production_year: 1997, type_id: 2}
+  end
 
   test "Car got to have a state" do
     car = Car.new(car_params.merge(state: nil))
@@ -37,17 +37,5 @@ class CarTest < ActiveSupport::TestCase
     duplicate_car = Car.new(car_params)
     assert_not duplicate_car.save, "Saved a car with a non-unique field \"plate\""
   end
-
-
-    
-
-
-
-
-
-
-
-
-
 
 end
