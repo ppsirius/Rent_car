@@ -28,7 +28,6 @@ class Car < ActiveRecord::Base
     transition :clean => :available, :serviced => :available, :rented => :available
   end
 
-
 end
 
 

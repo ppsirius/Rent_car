@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'clients/index'
+
+  get 'clients/show'
+
+  get 'clients/edit'
+
+  get 'clients/new'
+
+  get 'cars/index'
+
+  get 'cars/show'
+
+  get 'cars/edit'
+
+  get 'cars/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
