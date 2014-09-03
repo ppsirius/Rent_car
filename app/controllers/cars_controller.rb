@@ -11,6 +11,11 @@ class CarsController < ApplicationController
   def edit
   end
 
+  def new
+    @car = Car.new
+  end
+
+
   def destroy
   	@car.destroy
   		redirect_to root_url, notice: 'Samochód został usunięty'
