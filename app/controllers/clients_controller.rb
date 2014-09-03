@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+	before_action :set_client, only: [:show, :edit, :destroy]
+	
   def index
   	@clients = Client.order('updated_at')
   end

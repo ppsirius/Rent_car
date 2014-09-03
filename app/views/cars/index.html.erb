@@ -1,2 +1,28 @@
-<h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<h1>List of Cars</h1>
+<br />
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Brand</th>
+      <th>Plate</th>
+      <th>Color</th>
+      <th>Production year</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.type_id %></td>
+        <td><%= car.plate %></td>
+        <td><%= car.car_paint %></td>
+        <td><%= car.production_year %></td>
+        <td><%= car.state %></td>
+        <td><%= link_to 'Show', car %></td>
+        <td><%= link_to 'Edit', edit_car_path(car) %></td>
+        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
