@@ -1,6 +1,5 @@
 <%= simple_form_for(@car) do |f| %>
-	<%= f.association :types, placeholder: "Type" %>
-	<%= f.association :brands, placeholder: "Brand" %>
+	<%= f.association :type, placeholder: "Type" %>
 	<%= f.input :plate, placeholder: "Plate" %>
 	<%= f.input :production_year, placeholder: "Production year" %>
 	<%= f.input :car_paint, placeholder: "Color"%>

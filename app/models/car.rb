@@ -1,7 +1,8 @@
 class Car < ActiveRecord::Base
 
   belongs_to :type
-  
+  has_many :clients, through: :rents
+
 
   validates :state, :car_paint, :plate, :production_year, :type_id, presence: true
   validates :plate, uniqueness: true
