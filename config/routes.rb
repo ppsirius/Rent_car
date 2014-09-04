@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   resources :clients
   resources :cars
   resources :rents
-  post "cars/car_return" 
- 
-  root to: "clients#index"
+  put 'cars/car_return/:id(.:format)', :to => 'cars#car_return', :as => "return"
+  put 'cars/car_clean/:id(.:format)', :to => 'cars#car_clean', :as => "clean"
+  put 'cars/car_service/:id(.:format)', :to => 'cars#car_service', :as => "service"
+  put 'cars/car_available/:id(.:format)', :to => 'cars#car_available', :as => "available"
+
+
+   root to: "clients#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

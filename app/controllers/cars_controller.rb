@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :destroy, :car_return]
+  before_action :set_car, only: [:show, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
   	@cars = Car.order('state')
@@ -13,9 +13,23 @@ class CarsController < ApplicationController
 
   def car_return
     @car.return
-    redirect_to root_url, notice: "zwrócony"
+    redirect_to cars_path, notice: "returned"
   end
 
+  def car_clean
+    @car.clean
+    redirect_to cars_path, notice: "cleaned"
+  end
+
+  def car_service
+    @car.service
+    redirect_to cars_path, notice: "service"
+  end
+
+  def car_available
+    @car.available
+    redirect_to cars_path, notice: "free to go"
+  end
 
 
   def new
