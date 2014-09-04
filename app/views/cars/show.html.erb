@@ -1,2 +1,11 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<h1>Car</h1>
+<br />
+<p>Type: <%= @car.type.name %></p>
+<p>Brand: <%= @car.type.brand.name %></p>
+<p>Plate: <%= @car.plate %></p>
+<p>Year production: <%= @car.production_year %></p>
+<p>Color: <%= @car.car_paint %></p>
+<p>State: <%= @car.state %></p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>
