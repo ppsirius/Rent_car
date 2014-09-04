@@ -15,10 +15,26 @@ class CarsController < ApplicationController
     @car = Car.new
   end
 
+  def create
+    @car = Car.new(car_params)
+      if @car.save
+        redirect_to @car, notice: "Car was successfully created."
+      else
+        render :new
+      end
+  end
+
+  def update
+      if @car.update(car_params)
+        redirect_to @car, notice: "Car was successfully updated."
+      else
+        render :new
+      end
+  end
 
   def destroy
   	@car.destroy
-  		redirect_to root_url, notice: 'Samochód został usunięty'
+  		redirect_to cars_url, notice: "Car was successfully destroyed."
   end
 
   private

@@ -1,9 +1,14 @@
+<div class="row">
+ <div class="form-group col-lg-3 ">
+
 <%= simple_form_for(@car) do |f| %>
-	<%= f.association :types, placeholder: "Type" %>
-	<%= f.association :brands, placeholder: "Brand" %>
-	<%= f.input :plate, placeholder: "Plate" %>
-	<%= f.input :production_year, placeholder: "Production year" %>
-	<%= f.input :car_paint, placeholder: "Color"%>
+	<%= f.association :type, class: "form-control" %>
+	<%= f.input :plate %>
+	<%= f.input :production_year %>
+	<%= f.input :car_paint %>
 	<%= f.input :state, collection: ["available","rented", "clean", "serviced"], default:"available"%>
-	<%= f.button(:submit) %>
+	<%= f.button(:submit, class: "btn btn-success") %>
 <% end %>
+
+	</div>
+</div>
