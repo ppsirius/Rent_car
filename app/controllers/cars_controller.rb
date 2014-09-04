@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  befor_action :set_car, only [:show, :destroy]
+  before_action :set_car, only: [:show, :edit, :destroy]
 
   def index
   	@cars = Car.order('state')
@@ -10,6 +10,11 @@ class CarsController < ApplicationController
 
   def edit
   end
+
+  def new
+    @car = Car.new
+  end
+
 
   def destroy
   	@car.destroy
@@ -22,6 +27,6 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(car).permit(:production_year, :state, :car_paint, :plate, :type_id)
+      params.require(:car).permit(:production_year, :state, :car_paint, :plate, :type_id)
     end
 end
