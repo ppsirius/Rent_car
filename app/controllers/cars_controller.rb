@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
+  before_action :set_car, only: [:show, :update, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
   	@cars = Car.order('state')
@@ -47,9 +47,9 @@ class CarsController < ApplicationController
 
   def update
       if @car.update(car_params)
-        redirect_to @car, notice: "Car was successfully updated."
+        redirect_to cars_path, notice: "Car was successfully updated."
       else
-        render :new
+        render :edit
       end
   end
 
