@@ -33,17 +33,8 @@ class Car < ActiveRecord::Base
 end
 
 
-  def car_brand_name
-    type.brand.name
-  end
-
-  def car_type
-    type.name
-  end
-
-
   def to_label
-    "#{car_brand_name} #{car_type}"
+    "#{type.brand.name} #{type.name}"
   end
 
 end

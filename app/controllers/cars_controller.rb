@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :destroy]
+  before_action :set_car, only: [:show, :edit, :destroy, :car_return]
 
   def index
   	@cars = Car.order('state')
@@ -10,6 +10,13 @@ class CarsController < ApplicationController
 
   def edit
   end
+
+  def car_return
+    @car.return
+    redirect_to root_url, notice: "zwrócony"
+  end
+
+
 
   def new
     @car = Car.new
