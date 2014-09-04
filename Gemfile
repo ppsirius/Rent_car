@@ -29,6 +29,7 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'simple_form'
 gem 'devise'
+gem 'better_errors'
 
 gem 'state_machine'
 

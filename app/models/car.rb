@@ -1,7 +1,8 @@
 class Car < ActiveRecord::Base
 
   belongs_to :type
-  
+  has_many :clients, through: :rents
+
 
   validates :state, :car_paint, :plate, :production_year, :type_id, presence: true
   validates :plate, uniqueness: true
@@ -32,9 +33,17 @@ class Car < ActiveRecord::Base
 end
 
 
-  def origin
-    type.brand.origin
+  def car_brand_name
+    type.brand.name
   end
 
+  def car_type
+    type.name
+  end
+
+
+  def to_label
+    "#{car_brand_name} #{car_type}"
+  end
 
 end
