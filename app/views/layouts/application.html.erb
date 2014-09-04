@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-<%= yield %>
-</div>
+
+	<div class="container">
+
+		<div class="menu">
+		 <%= link_to "Home", root_path, :class => "btn-danger btn-lg" %>
+		 <%= link_to "All cars", cars_path, :class => "btn-info btn-lg" %>
+		 <%= link_to "Add car", new_car_path, :class => "btn-warning btn-lg" %>
+		</div>
+
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<%= yield %>
+
+	</div>
+	
 </body>
 </html>
