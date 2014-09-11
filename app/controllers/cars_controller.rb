@@ -13,6 +13,7 @@ class CarsController < ApplicationController
 
   def car_return
     @car.return
+    Rent.where(car_id: @car.id).last.update(active: false)
     redirect_to cars_path, notice: "returned"
   end
 

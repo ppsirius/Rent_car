@@ -11,6 +11,7 @@ class RentsController < ApplicationController
   def create
     @rent = Rent.new(rent_params)
     if @rent.save
+      @rent.update(active: true)
       @rent.car.rent
       redirect_to :root
     else
@@ -22,7 +23,7 @@ private
     
 
     def rent_params
-      params.require(:rent).permit(:client_id, :car_id)
+      params.require(:rent).permit(:client_id, :car_id, :active)
     end
   
 end
