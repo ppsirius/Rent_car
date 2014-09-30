@@ -1,6 +1,6 @@
 <%= simple_form_for(@rent) do |rent| %>
   <%= rent.association :client, placeholder: "Client" %>
-  <%= rent.association :car, placeholder: "Car", as: :radio_buttons %>
+  <%= rent.association :car, :collection => Car.available, placeholder: "Car", as: :radio_buttons %>
  
   <%= rent.button(:submit) %>
 <% end %>
