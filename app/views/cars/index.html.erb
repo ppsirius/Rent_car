@@ -14,8 +14,8 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td><%= car.type%></td>
-        <td><%= car.type.brand %></td>
+        <td><%= car.type.name%></td>
+        <td><%= car.type.brand.name %></td>
         <td><%= car.plate %></td>
         <td><%= car.car_paint %></td>
         <td><%= car.production_year %></td>
