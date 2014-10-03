@@ -6,7 +6,7 @@ class Car < ActiveRecord::Base
   validates :state, :car_paint, :plate, :production_year, :type_id, presence: true
   validates :plate, uniqueness: true
 
-  scope :available, -> { where(rents_count: 0) }
+  scope :available, -> { where(state: "available") }
 
 	state_machine :state, initial: :available do
 
