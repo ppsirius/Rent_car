@@ -2,8 +2,20 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
-    @cars = if params[:sort_by]
-      Car.all.reverse
+
+    sorting_hash = {
+      'color' => 'car_paint',
+      'productionYear' => 'production_year',
+      'state' => 'state',
+      'plate' => 'plate',
+      'brand' => nil,
+      'type' =>nil
+    }
+
+    sort_by = sorting_hash[params[:sort_by]]
+
+    @cars = if sort_by
+      Car.order(sort_by)
     else
       Car.all
     end
