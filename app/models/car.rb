@@ -39,6 +39,14 @@ class Car < ActiveRecord::Base
     end
   end
 
+  def type_brand_name
+    if type && type.brand
+      type.brand.name
+    else
+      "no brand"
+    end
+  end
+
 
   def to_label
     "#{type.brand.name} #{type.name}"
