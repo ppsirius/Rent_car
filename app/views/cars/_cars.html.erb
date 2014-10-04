@@ -17,7 +17,7 @@
         <td><%= car.plate %></td>
         <td><%= car.car_paint %></td>
         <td><%= car.production_year %></td>
-        <td><%= car.state %></td>
+        <td class="<%= car_state(car) %>"><%= car.state %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'return', car_return_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>

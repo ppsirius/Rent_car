@@ -12,7 +12,24 @@ body {
   background:         linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* W3C */
 }
 
+table {
+  border: 1px solid #032E45;
+}
+
+.table td:first-letter { 
+  text-transform: uppercase; 
+}
+
 a:hover {
+  color: #032E45;
+  text-decoration: none;
+}
+
+.available {
+  color: #0E9A18;
+}
+
+.menu a:hover {
   color: #C6BD87;
   text-decoration: none;
 }

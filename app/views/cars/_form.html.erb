@@ -1,11 +1,11 @@
 <div class="row">
- <div class="form-group col-lg-3 ">
+ <div class="form-group col-lg-3 " id= "carform">
 
 <%= simple_form_for(@car) do |f| %>
 	<%= f.association :type, class: "form-control" %>
-	<%= f.input :plate %>
-	<%= f.input :production_year %>
-	<%= f.input :car_paint %>
+	<%= f.input :plate, placeholder: "w formacie ABC12" %>
+	<%= f.input :production_year, placeholder: "Wpisz rok produkcji" %>
+	<%= f.input :car_paint, placeholder: "Wpisz kolor" %>
 	<%= f.input :state, collection: ["available","rented", "clean", "serviced"], default:"available"%>
 	<%= f.button(:submit, class: "btn btn-success") %>
 <% end %>
