@@ -18,11 +18,13 @@
      <%= link_to "Add rent", new_rent_path %>
 		</div>
 
-  <div class="container">
-  	<p class="notice"><%= notice %></p>
-  	<p class="alert"><%= alert %></p>
-	<%= yield %>
+    <% flash.each do |type_message, message| %>
+      <div class="flash my-<%= type_message %>"><%= message %></div>
+    <% end %>
 
+
+  <div class="container">
+  	<%= yield %>
 	</div>
 
 </body>

@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+
+body {
+  color: #032E45;
+  height: 100%;
+  background: -webkit-linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* IE10 */
+  background:      -o-linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* Opera 11.10+ */
+  background:         linear-gradient(0deg, #C6BD87 10%, #F5ECDB 90%); /* W3C */
+}
+
+a:hover {
+  color: #C6BD87;
+  text-decoration: none;
+}
+
+.container {
+	padding-top: 10px 20px;
+}
+
+.menu {
+	background-color: #032E45;
+  padding: 15px 25px;
+  text-decoration: none;
+
+}
+
+.menu a {
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.flash {
+  
+  padding: 10px 25px;
+  color: #032E45;
+  font-size: 14px;
+  font-style: italic;
+
+  &.my-alert {
+    background-color: #F55546;
+    color: #fff;
+  }
+
+  &.my-notice {
+    background-color: #C6BD87;
+
+  }
+}
+
