@@ -1,4 +1,5 @@
 $(function(){
+  if($("body").data("controller")=="CarsController" && $("body").data("action")=="new"){
 
   var plateValid = false;
   var yearValid = false;
@@ -6,18 +7,20 @@ $(function(){
   var yearField = $('#carform #car_production_year')
   var plateField = $('#carform #car_plate')
   var colorField = $('#carform #car_car_paint')
+  var regexPlate = /[a-zA-Z]{3,}\d\d/
 
   function buttonSwitcher () {
-    var sumbitButton = $("#carform [name='commit']")
+    var sumbitButton = $("[name='commit']")
     if (plateValid == true && yearValid == true && colorValid == true) {
       $(sumbitButton).removeAttr("disabled");
     } else {
         $(sumbitButton).attr("disabled", 'disable');
     }
+     console.log(colorValid);
   }
 
   var carYearValidator = function (e){
-    console.log(this)
+    
     yearValid = this.value && this.value.length==4 && $.isNumeric(this.value); 
 
     if (yearValid) {
@@ -30,7 +33,7 @@ $(function(){
   };
 
   var carPlateValidator = function (e){
-    plateValid = this.value && this.value.length==5
+    plateValid = this.value && this.value.match(regexPlate);
 
     if (plateValid) {
       $(this).removeClass("error");
@@ -55,7 +58,7 @@ $(function(){
   carYearValidator.call(yearField);
   carPlateValidator.call(plateField);
   carColorValidator.call(colorField);
- 
+  
   $(yearField).keyup(carYearValidator);
   $(yearField).focus(carYearValidator);
     
@@ -64,9 +67,11 @@ $(function(){
    
   $(colorField).keyup(carColorValidator);
   $(colorField).focus(carColorValidator);
+
+ 
   buttonSwitcher();
     
 
-});
+}});
 
 
