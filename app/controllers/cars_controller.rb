@@ -3,7 +3,6 @@ class CarsController < ApplicationController
 
   def index
   	@cars = Car.order('state')
-    flash[:notice] = 'Jakaś wiadomość'
   end
 
   def show
