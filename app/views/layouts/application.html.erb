@@ -8,8 +8,6 @@
 </head>
 <body>
 
-	
-
 		<div class="menu">
 		 <%= link_to "Home", root_path %>
 		 <%= link_to "Cars", cars_path %>
@@ -18,14 +16,11 @@
      <%= link_to "Add clients", new_client_path %>
      <%= link_to "Rents", rents_path %>
      <%= link_to "Add rent", new_rent_path %>
-
-
 		</div>
-  <div class="container">
 
+  <div class="container">
   	<p class="notice"><%= notice %></p>
   	<p class="alert"><%= alert %></p>
-
 	<%= yield %>
 
 	</div>
