@@ -8,16 +8,23 @@
 </head>
 <body>
 
-	<div class="container">
+	
 
 		<div class="menu">
-		 <%= link_to "Home", root_path, :class => "btn-danger btn-lg" %>
-		 <%= link_to "All cars", cars_path, :class => "btn-info btn-lg" %>
-		 <%= link_to "Add car", new_car_path, :class => "btn-warning btn-lg" %>
-		</div>
+		 <%= link_to "Home", root_path %>
+		 <%= link_to "Cars", cars_path %>
+		 <%= link_to "Add car", new_car_path %>
+     <%= link_to "Clients", clients_path %>
+     <%= link_to "Add clients", new_client_path %>
+     <%= link_to "Rents", rents_path %>
+     <%= link_to "Add rent", new_rent_path %>
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+
+		</div>
+  <div class="container">
+
+  	<p class="notice"><%= notice %></p>
+  	<p class="alert"><%= alert %></p>
 
 	<%= yield %>
 
