@@ -1,0 +1,16 @@
+<div class="row">
+ <div class="form-group col-lg-3 ">
+
+<%= simple_form_for(@client) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :doc_type do %>
+  <%= f.select :doc_type, [['ID', 'ID', nil], ['Passport', 'Passport', nil]] %>
+  <% end %>
+  <%= f.input :doc_number %>
+  <%= f.button(:submit, class: "btn btn-success") %>
+<% end %>
+
+  </div>
+</div>
+

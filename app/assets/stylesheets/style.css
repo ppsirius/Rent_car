@@ -1,5 +1,6 @@
 body {
-
+  background-color: #F5ECDB;
+  color: #032E45;
 }
 
 a:hover {
@@ -8,7 +9,7 @@ a:hover {
 }
 
 .container {
-	padding-top: 30px;
+	padding-top: 10px 20px;
 }
 
 .menu {
