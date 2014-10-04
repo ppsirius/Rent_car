@@ -2,18 +2,14 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
-    p params[:sort_by]
     @cars = if params[:sort_by]
-      p 'hellllo'
       Car.all.reverse
     else
-      p 'helooo allll'
       Car.all
     end
-    p @cars.map(&:id)
 
     respond_to do |format|
-      format.html 
+      format.html
       format.js
     end
   end

@@ -1,7 +1,6 @@
 $(function(){
 
   var clickHandler = function (e) {
-    console.log(this);
     $.ajax({
       url: "cars",
       data: {sort_by: $(this).attr('id').split('-')[0]},
