@@ -1,23 +1,23 @@
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
-      <th><%= link_to 'Type' %></th>
-      <th><%= link_to 'Brand' %></th>
-      <th><%= link_to 'Plate' %></th>
-      <th><%= link_to 'Color' %></th>
-      <th><%= link_to 'Production year' %></th>
+      <th id='type'><%= link_to 'Type' %></th>
+      <th id='brand'><%= link_to 'Brand' %></th>
+      <th id='plate'><%= link_to 'Plate' %></th>
+      <th id='color'><%= link_to 'Color' %></th>
+      <th id='production-year'><%= link_to 'Production year' %></th>
       <th><%= link_to 'State' %></th>
     </tr>
   </thead>
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td id='type-name'><%= car.type_name %></td>
-        <td id='type-brand-name'><%= car.type_brand_name %></td>
-        <td id='plate'><%= car.plate %></td>
-        <td id='paint'><%= car.car_paint %></td>
-        <td id='production-year'><%= car.production_year %></td>
-        <td id='state'><%= car.state %></td>
+        <td><%= car.type_name %></td>
+        <td><%= car.type_brand_name %></td>
+        <td><%= car.plate %></td>
+        <td><%= car.car_paint %></td>
+        <td><%= car.production_year %></td>
+        <td><%= car.state %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'return', car_return_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>
