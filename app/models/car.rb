@@ -38,6 +38,7 @@ class Car < ActiveRecord::Base
       "no type"
     end
   end
+  
 
 
   def to_label
