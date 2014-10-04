@@ -1,6 +1,6 @@
  input.error {
   border-color: red;
-
+   
 }
 input.error:focus {
   border-color: red;
