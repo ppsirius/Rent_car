@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
-  	@cars = Car.order('state')
+  	@cars = Car.order('state')w
   end
 
   def show
