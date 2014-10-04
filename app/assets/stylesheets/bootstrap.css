@@ -2606,7 +2606,8 @@ select[multiple].input-lg {
 .has-error .radio,
 .has-error .checkbox,
 .has-error .radio-inline,
-.has-error .checkbox-inline {
+.has-error
+ .checkbox-inline {
   color: #a94442;
 }
 .has-error .form-control {
