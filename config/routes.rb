@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :clients
   
   resources :rents
+  
   resources :cars do 
     member do
       put 'car_return'
