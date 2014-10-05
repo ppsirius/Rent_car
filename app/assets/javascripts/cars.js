@@ -4,60 +4,63 @@ $(function(){
   var plateValid = false;
   var yearValid = false;
   var colorValid = false;
-  var yearField = $('#carform #car_production_year')
-  var plateField = $('#carform #car_plate')
-  var colorField = $('#carform #car_car_paint')
+  var yearField = $('#car_production_year')
+  var plateField = $('#car_plate')
+  var colorField = $('#car_car_paint')
   var regexPlate = /[a-zA-Z]{3,}\d\d/
+  var sumbitButton = $("[name='commit']")
 
-  function buttonSwitcher () {
-    var sumbitButton = $("[name='commit']")
-    if (plateValid == true && yearValid == true && colorValid == true) {
+  function buttonSwitcher () {   
+    if (plateValid && yearValid && colorValid) {
       $(sumbitButton).removeAttr("disabled");
     } else {
         $(sumbitButton).attr("disabled", 'disable');
     }
-     console.log(colorValid);
-  }
+   }
 
   var carYearValidator = function (e){
+    var jfield = $(this)
+  
     
-    yearValid = this.value && this.value.length==4 && $.isNumeric(this.value); 
+    yearValid = jfield.val().length==4 && $.isNumeric(jfield.val()); 
 
     if (yearValid) {
-      $(this).removeClass("error");
+      jfield.removeClass("error");
       
     } else {
-      $(this).addClass("error");
+      jfield.addClass("error");
     }
     buttonSwitcher()
   };
 
   var carPlateValidator = function (e){
-    plateValid = this.value && this.value.match(regexPlate);
+    var jfieldPlate = $(this)
+    plateValid = jfieldPlate.val().match(regexPlate);
 
     if (plateValid) {
-      $(this).removeClass("error");
+      jfieldPlate.removeClass("error");
     } else {
-      $(this).addClass("error");
+      jfieldPlate.addClass("error");
     }
     buttonSwitcher();
 
   };
 
   var carColorValidator = function (e){
-    colorValid = this.value && this.value.length >0
+    var jfieldColor = $(this)
+    colorValid = jfieldColor.val().length >0
 
     if (colorValid) {
-      $(this).removeClass("error");
+      jfieldColor.removeClass("error");
     } else {
-      $(this).addClass("error");
+      jfieldColor.addClass("error");
     }
     buttonSwitcher();
   };
 
-  carYearValidator.call(yearField);
-  carPlateValidator.call(plateField);
-  carColorValidator.call(colorField);
+  carYearValidator.call(yearField[0]);
+  carPlateValidator.call(plateField[0]);
+  carColorValidator.call(colorField[0]);
   
   $(yearField).keyup(carYearValidator);
   $(yearField).focus(carYearValidator);

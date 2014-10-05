@@ -2,7 +2,19 @@ class ClientsController < ApplicationController
 	before_action :set_client, only: [:show, :edit, :destroy]
 
   def index
-  	@clients = Client.order('updated_at')
+    sort_by = params["sort-by"]
+    p params
+
+    @clients = if sort_by
+      Client.order(sort_by)
+    else
+      Client.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
