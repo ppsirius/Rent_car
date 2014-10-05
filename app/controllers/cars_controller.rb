@@ -15,7 +15,7 @@ class CarsController < ApplicationController
     sort_by = sorting_hash[params[:sort_by]]
 
     @cars = if sort_by
-      if sort_by == 'brand'
+      if sort_by == 'type'
         Car.joins(:type).order("types.name")
       else
         Car.order(sort_by)
