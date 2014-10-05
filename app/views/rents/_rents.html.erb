@@ -1,0 +1,17 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th><%= link_to 'Client',            {}, { id: 'name-sort', data: {"sort-by" => 'name'} } %></th>
+      <th><%= link_to 'Model',         {}, { id: 'surname-sort', data: {"sort-by" => 'surname'} } %></th>
+      <th><%= link_to 'Brand',             {}, { id: 'age-sort', data: {"sort-by" => 'age'} } %></th>
+      <th><%= link_to 'Date',   {}, { id: 'doc_type-sort', data: {"sort-by" => 'doc_type'} } %></th>
+      <th><%= link_to 'Status', {}, { id: 'doc_number-sort', data: {"sort-by" => 'doc_number'} } %></th>
+    </tr>
+  </thead>
+
+  <tbody id="rents-list">
+  <%= render "rents/rents_list" %>
+
+    
+  </tbody>
+</table>
