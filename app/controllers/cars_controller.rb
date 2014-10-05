@@ -2,19 +2,9 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy, :car_return, :car_clean, :car_service, :car_available]
 
   def index
-    sort_by = params[:sort_by]
+    # params[:sort_by]
 
-    @cars = if sort_by
-      if sort_by == 'type'
-        Car.joins(:type).select('cars.*, types.name').order("types.name")
-      elsif sort_by == 'brand'
-        Car.joins(:type => [:brand]).select('cars.*, types.brand_id, brands.name').order("brands.name")
-      else
-        Car.order(sort_by)
-      end
-    else
-      Car.all
-    end
+    @cars = Car.sort_by(params[:sort_by])
 
     respond_to do |format|
       format.html

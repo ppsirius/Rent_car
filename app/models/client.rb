@@ -6,10 +6,17 @@ class Client < ActiveRecord::Base
 	validates :age, numericality: true, inclusion: {in: 18..80}
 	validates :doc_number, uniqueness: true
 
-  
+  scope :ordered, -> (what, how) { order("#{what} #{how}") }
 
   def full_name
-    name + ' ' + surname 
+    name + ' ' + surname
   end
 
+  def self.sorted(what, how)
+    if what
+      Client.ordered(what, how)
+    else
+      Client.all
+    end
+  end
 end
