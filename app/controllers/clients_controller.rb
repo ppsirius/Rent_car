@@ -3,10 +3,11 @@ class ClientsController < ApplicationController
 
   def index
     sort_by = params[:sort_by]
+    sort_dir = params[:sort_dir]
 
 
     @clients = if sort_by
-      Client.order(sort_by)
+      Client.order("#{sort_by} #{sort_dir}")
     else
       Client.all
     end
