@@ -1,7 +1,25 @@
 class RentsController < ApplicationController
 
   def index
-    @rents = Rent.all
+      sort_by = params[:sort_by]
+
+    @rents = if sort_by
+      if sort_by == 'name'
+        Rent.joins(:client).order("clients.name")
+      elsif sort_by == 'type'
+        Rent.joins(:car => [:type]).select('rents.*, cars.type_id, types.name').order("types.name")
+      else
+        Rent.order(sort_by)
+     
+      end
+    else
+      Rent.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
