@@ -1,7 +1,7 @@
 class RentsController < ApplicationController
 
   def index
-      sort_by = params[:sort_by]
+    sort_by = params[:sort_by]
 
     @rents = if sort_by
       if sort_by == 'name'
@@ -39,8 +39,8 @@ class RentsController < ApplicationController
 private
     
 
-    def rent_params
-      params.require(:rent).permit(:client_id, :car_id, :active)
-    end
+  def rent_params
+    params.require(:rent).permit(:client_id, :car_id, :active)
+  end
   
 end

@@ -20,7 +20,7 @@ class Rent < ActiveRecord::Base
       "Rented"
     else
       "Returned"
-    end 
+  end 
 
   end
 end
