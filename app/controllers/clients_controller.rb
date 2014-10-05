@@ -2,8 +2,8 @@ class ClientsController < ApplicationController
 	before_action :set_client, only: [:show, :edit, :destroy]
 
   def index
-    sort_by = params["sort-by"]
-    p params
+    sort_by = params[:sort_by]
+
 
     @clients = if sort_by
       Client.order(sort_by)
