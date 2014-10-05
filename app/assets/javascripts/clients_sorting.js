@@ -8,19 +8,20 @@ $(function(){
     });
     var clickedLink = $(this);
     var sortAsc = clickedLink.data("sorting-dir")==="ASC";
+    var arrows = $(".fa.fa-angle-down, .fa.fa-angle-up")
+    arrows.removeClass()
+    arrows.addClass("fa fa-angle-right")
+
+    clickedLink.next().removeClass();
+
     if (sortAsc){
-      clickedLink.data("sorting-dir", "DESC")
+      clickedLink.data("sorting-dir", "DESC");      
+      $(this).next().addClass("fa fa-angle-down");
     } else{
       clickedLink.data("sorting-dir", "ASC");
+      $(this).next().addClass("fa fa-angle-up");
     };   
-    var sortClass = $(this).attr("class")==="ASC";
-    clickedLink.removeClass();
-
-      if (sortClass){
-        $(this).addClass("DESC");
-      } else {
-      $(this).addClass("ASC");
-      };
+    
     
 
     return false;
