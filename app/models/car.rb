@@ -8,17 +8,19 @@ class Car < ActiveRecord::Base
 
   scope :available, -> { where(state: "available") }
 
-  scope :sort_by,   ->( what ) { if what
-                                  if what == 'type'
-                                    joins(:type).select('cars.*, types.name').order("types.name")
-                                  elsif what == 'brand'
-                                    joins(:type => [:brand]).select('cars.*, types.name, brands.name').order("brands.name")
-                                  else 
-                                    Car.order(what)
-                                  end
-                                else
-                                  Car.all
-                                end}
+  scope :sort_by,   ->( what ) do
+    if what
+      if what == 'type'
+        joins(:type).select('cars.*, types.name').order("types.name")
+      elsif what == 'brand'
+        joins(:type => [:brand]).select('cars.*, types.name, brands.name').order("brands.name")
+      else 
+        Car.order(what)
+      end
+    else
+      Car.all
+    end
+  end
 
 	state_machine :state, initial: :available do
 
