@@ -3,16 +3,7 @@ class CarsController < ApplicationController
 
   def index
 
-    sorting_hash = {
-      'color' => 'car_paint',
-      'productionYear' => 'production_year',
-      'state' => 'state',
-      'plate' => 'plate',
-      'brand' => nil,
-      'type' => 'type'
-    }
-
-    sort_by = sorting_hash[params[:sort_by]]
+    sort_by = params[:sort_by]
 
     @cars = if sort_by
       if sort_by == 'type'

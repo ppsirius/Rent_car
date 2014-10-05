@@ -3,16 +3,14 @@ $(function(){
   var clickHandler = function (e) {
     $.ajax({
       url: "cars",
-      data: {sort_by: $(this).attr('id').split('-')[0]},
+      data: {sort_by: $(this).data('sort-by')},
       dataType: "script"
     });
-    console.log($(this).attr('id').split('-')[0])
 
     return false;
   };
 
 
-  $('#type-sort').click(clickHandler);
 
   var links = ['type-sort', 'brand-sort', 'plate-sort', 'color-sort', 'productionYear-sort', 'state-sort'];
 
