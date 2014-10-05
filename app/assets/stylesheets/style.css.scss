@@ -17,7 +17,28 @@ h1, h2, h3 {
 }
 
 #accordion h1 {
+  &:focus {
+    outline-style: none;
+  }
+  &:active {
+    outline-style: none;
+  }
+
+} 
+
+#accordion h1 {
   cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  background-color: #789F99;
+  padding: 10px 15px;
+
+        
+
+}
+
+.ui-state-active {
+  background-color: #9F8F88 !important;
 }
 
 
