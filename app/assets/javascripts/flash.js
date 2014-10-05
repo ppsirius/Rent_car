@@ -1,4 +1,4 @@
-$(function(){ 
+$(function(){
   var flash = $('.flash');
 
   setTimeout(function(){
