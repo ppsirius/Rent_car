@@ -5,15 +5,14 @@ class RentsController < ApplicationController
 
     @rents = if sort_by
       if sort_by == 'name'
-        Rent.joins(:client).order("clients.name")
+        Rent.by_name
       elsif sort_by == 'type'
-        Rent.joins(:car => [:type]).select('rents.*, cars.type_id, types.name').order("types.name")
+        Rent.by_type
       else
-        Rent.order(sort_by)
-     
+        Rent.by_params(sort_by)
       end
     else
-      Rent.all
+      Rent.includes(:client, :car => [:type])   #  eager loading
     end
 
     respond_to do |format|
