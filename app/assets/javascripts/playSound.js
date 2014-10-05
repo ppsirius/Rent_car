@@ -15,9 +15,11 @@
 
 })(jQuery);
 
+var sounds = ['http://www.noiseaddicts.com/samples/293', 'http://www.noiseaddicts.com/samples/275', 'http://www.noiseaddicts.com/samples/291' ];
+
 $(function() {
-  var sounds = ['http://www.noiseaddicts.com/samples/293'];
   $('h1').on('click', function() {
-    $.playSound(sounds[0]);
+    var random = Math.floor((Math.random() * sounds.length )); 
+    $.playSound(sounds[random]);
   });
 });
