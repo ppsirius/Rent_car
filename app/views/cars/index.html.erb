@@ -1,4 +1,20 @@
 <h1>List of Cars</h1>
 <br />
 
-<div id='cars-list'><%= render "cars" %></div>
+<div>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th><%= link_to 'Type',            {}, { id: 'type-sort' } %></th>
+      <th><%= link_to 'Brand',           {}, { id: 'brand-sort'} %></th>
+      <th><%= link_to 'Plate',           {}, { id: 'plate-sort'} %></th>
+      <th><%= link_to 'Color',           {}, { id: 'color-sort'} %></th>
+      <th><%= link_to 'Production year', {}, { id: 'productionYear-sort'} %></th>
+      <th><%= link_to 'State',           {}, { id: 'state-sort'} %></th>
+    </tr>
+  </thead>
+  <tbody id='cars-list'>
+    <%= render "cars" %>    
+  </tbody>
+</table>
+</div>
