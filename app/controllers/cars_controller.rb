@@ -9,13 +9,17 @@ class CarsController < ApplicationController
       'state' => 'state',
       'plate' => 'plate',
       'brand' => nil,
-      'type' =>nil
+      'type' => 'type'
     }
 
     sort_by = sorting_hash[params[:sort_by]]
 
     @cars = if sort_by
-      Car.order(sort_by)
+      if sort_by == 'brand'
+        Car.joins(:type).order("types.name")
+      else
+        Car.order(sort_by)
+      end
     else
       Car.all
     end
