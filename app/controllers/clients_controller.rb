@@ -3,11 +3,7 @@ class ClientsController < ApplicationController
 
   def index
     sort_by = params[:sort_by]
-   
-
-
     @clients = Client.sorted(sort_by, params[:sort_dir])
-  
 
     respond_to do |format|
       format.html

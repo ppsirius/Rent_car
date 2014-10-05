@@ -9,8 +9,9 @@ class Client < ActiveRecord::Base
   scope :ordered, -> (what, how) { order("#{what} #{how}") }
 
   def full_name
-    name + ' ' + surname 
+    name + ' ' + surname
   end
+
   def self.sorted(what, how)
     if what
       Client.ordered(what, how)
@@ -18,5 +19,4 @@ class Client < ActiveRecord::Base
       Client.all
     end
   end
-
 end
