@@ -8,7 +8,7 @@ class CarsController < ApplicationController
       if sort_by == 'type'
         Car.joins(:type).order("types.name")
       elsif sort_by == 'brand'
-        Car.joins(:type => [:brand]).order("brands.name")
+        Car.joins(:type => [:brand]).select('cars.*, types.brand_id, brands.name').order("brands.name")
       else
         Car.order(sort_by)
       end
