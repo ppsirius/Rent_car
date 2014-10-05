@@ -8,9 +8,11 @@ $(function(){
     });
     var clickedLink = $(this);
     var sortAsc = clickedLink.data("sorting-dir")==="ASC";
+    var arrows = $(".fa.fa-angle-down, .fa.fa-angle-up")
+    arrows.removeClass()
+    arrows.addClass("fa fa-angle-right")
 
     clickedLink.next().removeClass();
-    $(".fa fa-angle-down, .fa-angle-up").removeClass().addClass("fa fa-angle-right")
 
     if (sortAsc){
       clickedLink.data("sorting-dir", "DESC");      
