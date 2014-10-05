@@ -1,4 +1,7 @@
+
+
 <table class="table table-hover table-bordered">
+
   <thead>
     <tr>
       <th><%= link_to 'Type',            {}, { id: 'type-sort' } %></th>
@@ -9,23 +12,9 @@
       <th><%= link_to 'State',           {}, { id: 'state-sort'} %></th>
     </tr>
   </thead>
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.type_name %></td>
-        <td><%= car.type_brand_name %></td>
-        <td><%= car.plate %></td>
-        <td><%= car.car_paint %></td>
-        <td><%= car.production_year %></td>
-        <td class="<%= car_state(car) %>"><%= car.state %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'return', car_return_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>
-        <td><%= link_to 'clean', car_clean_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>
-        <td><%= link_to 'service', car_service_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>
-        <td><%= link_to 'available', car_available_car_path(car), method: :put, data: { confirm: 'Are you sure?'} %></td>
-        <td><%= link_to 'Delete car', car, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-      </tr>
-    <% end %>
+
+  <tbody id='cars-list'>
+    <%= render "cars/cars_list" %>    
   </tbody>
+  
 </table>
