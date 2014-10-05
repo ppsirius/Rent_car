@@ -8,19 +8,18 @@ $(function(){
     });
     var clickedLink = $(this);
     var sortAsc = clickedLink.data("sorting-dir")==="ASC";
+
+    clickedLink.next().removeClass();
+    $(".fa fa-angle-down, .fa-angle-up").removeClass().addClass("fa fa-angle-right")
+
     if (sortAsc){
-      clickedLink.data("sorting-dir", "DESC")
+      clickedLink.data("sorting-dir", "DESC");      
+      $(this).next().addClass("fa fa-angle-down");
     } else{
       clickedLink.data("sorting-dir", "ASC");
+      $(this).next().addClass("fa fa-angle-up");
     };   
-    var sortClass = $(this).attr("class")==="ASC";
-    clickedLink.removeClass();
-
-      if (sortClass){
-        $(this).addClass("DESC");
-      } else {
-      $(this).addClass("ASC");
-      };
+    
     
 
     return false;
