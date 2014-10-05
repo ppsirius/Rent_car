@@ -20,6 +20,7 @@ $(function(){
 
   var carYearValidator = function (e){
     var jfield = $(this)
+  
     
     yearValid = jfield.val().length==4 && $.isNumeric(jfield.val()); 
 
